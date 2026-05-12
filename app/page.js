@@ -1,6 +1,10 @@
 'use client'
 import { supabase } from '../lib/supabase'
-
+useEffect(() => {
+  supabase.auth.getUser().then(({ data }) => {
+    if (data.user) router.push('/list')
+  })
+}, [])
 export default function Home() {
   const handleLogin = async () => {
     await supabase.auth.signInWithOAuth({
