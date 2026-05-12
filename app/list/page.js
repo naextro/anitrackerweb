@@ -119,11 +119,14 @@ export default function List() {
                     <button onClick={onAdd}
                         className="bg-[#e94560] text-white text-sm px-3 py-1.5 rounded hover:opacity-80 transition">
                         + Add
-                        </button>
-                    <button
-                        onClick={() => supabase.auth.signOut().then(() => router.push('/'))}
-                        className="text-[#7a7a9a] text-xs hover:text-white transition">
-                        sign out
+                    </button>
+                    <button onClick={() => router.push('/import')}
+                        className="bg-[#181830] text-white text-sm px-3 py-1.5 rounded border border-[#23234a] hover:opacity-80 transition">
+                        Import
+                    </button>
+                    <button onClick={() => supabase.auth.signOut().then(() => router.push('/'))}
+                        className="bg-[#181830] text-[#7a7a9a] text-sm px-3 py-1.5 rounded border border-[#23234a] hover:text-white transition">
+                        Sign out
                     </button>
                 </div>
                 {/* list */}
